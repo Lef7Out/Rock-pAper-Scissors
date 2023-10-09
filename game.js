@@ -70,3 +70,38 @@ function game() {
 }
 }
 
+function play() {
+    let round = 0;
+    let userScore = 0;
+    let compScore = 0;
+
+    for(let i = 1; i <= 3; i++) {
+        let games = game();
+        if(games === "win"){
+            userScore++;
+            round++;           
+            console.log(
+                `Round: ${round}, userScore ${userScore}:  ${userScore} compscore`
+            );
+        }else if(games === "lose"){
+            compScore++;
+            round++;
+            console.log(
+                `Round: ${round}, userScore ${userScore}:  ${compScore} compscore`
+            );
+        }else{
+            round++;
+            console.log(
+                `Round: ${round}, userScore ${userScore}: ${compScore} compscore`
+        );
+    }
+}
+if(compScore < userScore) {
+    console.log("You Win!");
+}else if(compScore > userScore) {
+    console.log("You Lose!");
+}else {
+    console.log("Its a Tie!");
+}
+}
+play()
